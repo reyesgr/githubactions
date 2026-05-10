@@ -10,12 +10,13 @@ on:
     paths: [ 'hangman-api/**' ]
 
 jobs:
-  audit:
-    runs-on: ubuntu-latest
-
+  buildAndTest:
     strategy:
       matrix:
         node-version: [16, 17, 18]
+        os: [ubuntu-latest, ubuntu-22.04]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout
