@@ -13,9 +13,17 @@ jobs:
   audit:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16, 17, 18]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Setup Node.js version
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Build and test
         working-directory: ./hangman-api
         run: |
