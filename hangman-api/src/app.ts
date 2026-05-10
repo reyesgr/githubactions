@@ -5,5 +5,3 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 initServer();
-
-// Commente
