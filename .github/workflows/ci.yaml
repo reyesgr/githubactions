@@ -4,8 +4,10 @@ name: Integración continua
 on:
   push:
     branches: [ main ]
+    paths: [ 'hangman-api/**' ]
   pull_request:
     branches: [ main ]
+    paths: [ 'hangman-api/**' ]
 
 jobs:
   audit:
