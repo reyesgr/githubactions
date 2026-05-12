@@ -39,5 +39,5 @@ jobs:
           path: hangman-api/dist
       - name: Build docker image
         working-directory: ./hangman-api
-        run: docker build reyesgrinformatica/hangman-api -f Dockerfile.workflow .
+        run: docker build -t reyesgrinformatica/hangman-api -f Dockerfile.workflow .
 
